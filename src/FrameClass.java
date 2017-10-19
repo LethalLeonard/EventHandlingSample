@@ -1,9 +1,5 @@
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import java.awt.FlowLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -19,6 +15,8 @@ public class FrameClass extends JFrame
     //sets up variables for buttons
     private JButton closeButton;
 
+    private JPanel button, info;
+
     //sets up variables for information to be stored
     private String name = "", bday = "", city = "", state = "", string = "";
 
@@ -27,47 +25,53 @@ public class FrameClass extends JFrame
         //sends the window's title to the JFrame class
         super("Personal Info");
         //sets the layout so that once the window width is hit, it wraps the assets
-        setLayout(new FlowLayout(FlowLayout.LEFT));
+        setLayout(new BorderLayout());
+
+        info = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        add(info);
 
         //creates the label for the name text field
-        nameLabel = new JLabel("Enter your name: ");
+        nameLabel = new JLabel("Enter your name: \t");
         nameLabel.setLabelFor(nameTF);
-        add(nameLabel);
+        info.add(nameLabel);
 
         //creates the text entry field for the name label with a width of 15 columns
         nameTF = new JTextField(15);
-        add(nameTF);
+        info.add(nameTF);
 
         //creates the label for the birthday text field
-        bDayLabel = new JLabel("Enter your birthday:");
+        bDayLabel = new JLabel("Enter your birthday:\t");
         bDayLabel.setLabelFor(bDayTF);
-        add(bDayLabel);
+        info.add(bDayLabel);
 
         //creates the text entry field for the Birthday label with a width of 15 columns
         bDayTF = new JTextField(15);
-        add(bDayTF);
+        info.add(bDayTF);
 
         //creates the label for the city text field
-        cityLabel = new JLabel("Enter your city:");
+        cityLabel = new JLabel("Enter your city:\t");
         cityLabel.setLabelFor(cityTF);
-        add(cityLabel);
+        info.add(cityLabel);
 
         //creates the text entry field for the city label with a width of 15 columns
         cityTF = new JTextField(15);
-        add(cityTF);
+        info.add(cityTF);
 
         //creates the label for the state text field
-        stateLabel = new JLabel("Enter your state: ");
+        stateLabel = new JLabel("Enter your state: \t");
         stateLabel.setLabelFor(stateTF);
-        add(stateLabel);
+        info.add(stateLabel);
 
         //creates the text entry field for the state label with a width of 15 columns
         stateTF = new JTextField(15);
-        add(stateTF);
+        info.add(stateTF);
+
+        button = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        add(button,BorderLayout.SOUTH);
 
         //Creates a button with the text Close
-        closeButton = new JButton("Close");
-        add(closeButton);
+        closeButton = new JButton("Continue");
+        button.add(closeButton);
 
         //adds the action handlers for each element
         theHandler handler = new theHandler();
@@ -77,7 +81,7 @@ public class FrameClass extends JFrame
         stateTF.addActionListener(handler);
         closeButton.addActionListener(handler);
 
-
+        setResizable(false);
     }
 
     //Called in theHandler class. Outputs all information in a JOptionPane

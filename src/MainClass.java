@@ -11,7 +11,7 @@ public class MainClass
         f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //sets the window size
-        f1.setSize(350,200);
+        f1.setSize(350,170);
 
         //sets whether the window is visible or not
         f1.setVisible(true);
