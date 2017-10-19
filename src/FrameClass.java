@@ -10,9 +10,16 @@ import java.awt.event.ActionEvent;
 
 public class FrameClass extends JFrame
 {
+    //sets up variables for text fields
     private JTextField nameTF, bDayTF, cityTF, stateTF;
+
+    //sets up variables for labels
     private JLabel nameLabel, bDayLabel, cityLabel, stateLabel;
+
+    //sets up variables for buttons
     private JButton closeButton;
+
+    //sets up variables for information to be stored
     private String name = "", bday = "", city = "", state = "", string = "";
 
     public FrameClass()
@@ -22,39 +29,39 @@ public class FrameClass extends JFrame
         //sets the layout so that once the window width is hit, it wraps the assets
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        //creates the label for the first name text field
+        //creates the label for the name text field
         nameLabel = new JLabel("Enter your name: ");
         nameLabel.setLabelFor(nameTF);
         add(nameLabel);
 
-        //creates the text entry field for the first label with a width of 15
+        //creates the text entry field for the name label with a width of 15 columns
         nameTF = new JTextField(15);
         add(nameTF);
 
-        //creates the label for the first text field
+        //creates the label for the birthday text field
         bDayLabel = new JLabel("Enter your birthday:");
         bDayLabel.setLabelFor(bDayTF);
         add(bDayLabel);
 
-        //creates the text entry field for the first label with a width of 15
+        //creates the text entry field for the Birthday label with a width of 15 columns
         bDayTF = new JTextField(15);
         add(bDayTF);
 
-        //creates the label for the first text field
+        //creates the label for the city text field
         cityLabel = new JLabel("Enter your city:");
         cityLabel.setLabelFor(cityTF);
         add(cityLabel);
 
-        //creates the text entry field for the first label with a width of 15
+        //creates the text entry field for the city label with a width of 15 columns
         cityTF = new JTextField(15);
         add(cityTF);
 
-        //creates the label for the first text field
+        //creates the label for the state text field
         stateLabel = new JLabel("Enter your state: ");
         stateLabel.setLabelFor(stateTF);
         add(stateLabel);
 
-        //creates the text entry field for the first label with a width of 15
+        //creates the text entry field for the state label with a width of 15 columns
         stateTF = new JTextField(15);
         add(stateTF);
 
