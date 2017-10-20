@@ -15,6 +15,7 @@ public class FrameClass extends JFrame
     //sets up variables for buttons
     private JButton closeButton;
 
+    //sets up the variables for used JPanels
     private JPanel button, info;
 
     //sets up variables for information to be stored
@@ -27,6 +28,7 @@ public class FrameClass extends JFrame
         //sets the layout so that once the window width is hit, it wraps the assets
         setLayout(new BorderLayout());
 
+        //sets up the panel for the information input area
         info = new JPanel(new FlowLayout(FlowLayout.LEFT));
         add(info);
 
@@ -66,6 +68,7 @@ public class FrameClass extends JFrame
         stateTF = new JTextField(15);
         info.add(stateTF);
 
+        //sets up the panel for the button area
         button = new JPanel(new FlowLayout(FlowLayout.CENTER));
         add(button,BorderLayout.SOUTH);
 
@@ -86,12 +89,13 @@ public class FrameClass extends JFrame
 
     //Called in theHandler class. Outputs all information in a JOptionPane
     private void displayString()
-    {
+    {   //formats the String string for the output
         string = String.format("Name: %s\n" +
                         "Birthday: %s\n" +
                         "City, State: %s, %s",
                         name, bday, city, state);
 
+        //outputs the String string in a popup
         JOptionPane.showMessageDialog(null,string);
     }
 
@@ -114,6 +118,12 @@ public class FrameClass extends JFrame
                 dispose();
                 displayString();
             }
+            else if(event.getSource() == nameTF)
+                nameTF.transferFocus();
+            else if(event.getSource() == bDayTF)
+                bDayTF.transferFocus();
+            else if(event.getSource() == cityTF)
+                cityTF.transferFocus();
         }
     }
 }
